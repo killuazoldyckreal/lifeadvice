@@ -43,10 +43,6 @@
     background-color: #555; /* Dark gray color */
   }
 
-  .thank-you {
-    font-size: 36px; /* Adjust the font size as needed */
-    margin-top: 20px; /* Add some space below the thank you message */
-  }
 </style>
 </head>
 <body>
@@ -57,24 +53,22 @@
     <button class="button" onclick="optionClicked(1)">Yes</button>
     <button class="button" onclick="optionClicked(2)">No</button>
   </div>
-  <div class="thank-you" style="display: none;">Thank you</div>
 </div>
 
 <script>
   function optionClicked(option) {
     var question = document.getElementById('question');
-    var thankYou = document.querySelector('.thank-you');
     if (option === 1) {
       if (question.textContent === 'Do you have a problem in life?') {
         question.textContent = 'Can you do something about it?';
       } else {
+        question.style.fontSize = '50px';
         question.textContent = 'Then why worry?';
-        thankYou.style.display = 'block';
         document.querySelector('.buttons').style.display = 'none';
       }
     } else {
+      question.style.fontSize = '50px';
       question.textContent = 'Then why worry?';
-      thankYou.style.display = 'block';
       document.querySelector('.buttons').style.display = 'none';
     }
   }
